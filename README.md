@@ -45,6 +45,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
+- Based on the [design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=&&&) by [Gregoire Vella](http://linkedin.com/company/minimalapps)
 - Hat tip to anyone whose code was used
 - Microverse
 - My supportive family 😊
