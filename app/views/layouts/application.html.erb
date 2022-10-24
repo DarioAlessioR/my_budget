@@ -10,6 +10,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
+<%= button_to "Log out", destroy_user_session_path, method: :delete %>
+
+
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
