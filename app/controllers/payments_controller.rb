@@ -4,8 +4,8 @@ class PaymentsController < ApplicationController
 
   # GET /payments or /payments.json
   def index
-    @payments = Payment.all
     @category = Category.find(params[:category_id])
+    @payments = @category.payments
   end
 
   # GET /payments/1 or /payments/1.json
@@ -13,8 +13,9 @@ class PaymentsController < ApplicationController
 
   # GET /payments/new
   def new
+    @category = Category.find(params[:category_id])
     @payment = Payment.new
-    @payment = current_user.payments.build
+   
 
   end
 
@@ -24,13 +25,14 @@ class PaymentsController < ApplicationController
   # POST /payments or /payments.json
   def create
     @payment = Payment.new(payment_params)
-    current_user.payments << @payment
-   
+    @payment.user = current_user
+    @category = Category.find(@payment.category_id)
+    @payment.categories.push(@category)
 
     respond_to do |format|
       if @payment.save
       
-        format.html { redirect_to category_payments_path(@payment.category_id), notice: 'Payment was successfully created.' }
+        format.html { redirect_to category_payments_path(@category), notice: 'Payment was successfully created.' }
         format.json { render :show, status: :created, location: @payment }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -42,9 +44,11 @@ class PaymentsController < ApplicationController
 
   # PATCH/PUT /payments/1 or /payments/1.json
   def update
+    @category = Category.find(params[:category_id])
+
     respond_to do |format|
       if @payment.update(payment_params)
-        format.html { redirect_to category_payments_path(@category), notice: 'Payment was successfully updated.' }
+        format.html { redirect_to category_payment_path(@category, @payment), notice: 'Payment was successfully updated.' }
         format.json { render :show, status: :ok, location: @payment }
       else
         format.html { render :edit, status: :unprocessable_entity }

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # before_action :authenticate_user!
   before_action :set_user, only: %i[show edit update destroy]
+ 
 
   def welcome
     redirect_to categories_path if user_signed_in?
@@ -8,22 +9,29 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
+    before_action :authenticate_user!
     @users = User.all
   end
 
   # GET /users/1 or /users/1.json
-  def show; end
+  def show
+    before_action :authenticate_user!
+  end
 
   # GET /users/new
   def new
+    before_action :authenticate_user!
     @user = User.new
   end
 
   # GET /users/1/edit
-  def edit; end
+  def edit
+    before_action :authenticate_user!
+  end
 
   # POST /users or /users.json
   def create
+    before_action :authenticate_user!
     @user = User.new(user_params)
 
     respond_to do |format|
@@ -39,6 +47,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
+    before_action :authenticate_user!
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to user_url(@user), notice: 'User was successfully updated.' }
@@ -52,6 +61,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1 or /users/1.json
   def destroy
+    before_action :authenticate_user!
     @user.destroy
 
     respond_to do |format|
