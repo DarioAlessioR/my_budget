@@ -13,6 +13,9 @@
 <%= button_to "Log out", destroy_user_session_path, method: :delete %>
 
 
+<p class="navbar-list-item">Current user: <%= current_user.name if user_signed_in? %></p>
+ 
+
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

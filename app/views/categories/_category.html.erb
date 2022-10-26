@@ -9,9 +9,10 @@
     <%= category.icon %>
   </p>
 
-  <p>
-    <strong>User:</strong>
-    <%= category.user_id %>
-  </p>
+<img class="newcategory_img" src="<%=asset_path("#{category.icon}.png") %>">
+
+<p>
+      $ <%= category.total_amount_category %>
+    </p>
 
 </div>

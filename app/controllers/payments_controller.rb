@@ -1,9 +1,11 @@
 class PaymentsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_payment, only: %i[show edit update destroy]
 
   # GET /payments or /payments.json
   def index
     @payments = Payment.all
+    @category = Category.find(params[:category_id])
   end
 
   # GET /payments/1 or /payments/1.json
@@ -12,6 +14,8 @@ class PaymentsController < ApplicationController
   # GET /payments/new
   def new
     @payment = Payment.new
+    @payment = current_user.payments.build
+
   end
 
   # GET /payments/1/edit
@@ -20,10 +24,13 @@ class PaymentsController < ApplicationController
   # POST /payments or /payments.json
   def create
     @payment = Payment.new(payment_params)
+    current_user.payments << @payment
+   
 
     respond_to do |format|
       if @payment.save
-        format.html { redirect_to payment_url(@payment), notice: 'Payment was successfully created.' }
+      
+        format.html { redirect_to category_payments_path(@payment.category_id), notice: 'Payment was successfully created.' }
         format.json { render :show, status: :created, location: @payment }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -32,11 +39,12 @@ class PaymentsController < ApplicationController
     end
   end
 
+
   # PATCH/PUT /payments/1 or /payments/1.json
   def update
     respond_to do |format|
       if @payment.update(payment_params)
-        format.html { redirect_to payment_url(@payment), notice: 'Payment was successfully updated.' }
+        format.html { redirect_to category_payments_path(@category), notice: 'Payment was successfully updated.' }
         format.json { render :show, status: :ok, location: @payment }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -50,7 +58,7 @@ class PaymentsController < ApplicationController
     @payment.destroy
 
     respond_to do |format|
-      format.html { redirect_to payments_url, notice: 'Payment was successfully destroyed.' }
+      format.html { redirect_to category_payments_path, notice: 'Payment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

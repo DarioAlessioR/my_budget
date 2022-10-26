@@ -7,4 +7,6 @@
   <%= link_to "Back to categories", categories_path %>
 
   <%= button_to "Destroy this category", @category, method: :delete %>
+  <%= link_to category_payments_path(@category) do %>See Payments<% end %>
+
 </div>
