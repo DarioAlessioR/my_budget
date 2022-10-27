@@ -9,7 +9,6 @@ RSpec.describe 'IndexCategories', type: :system do
     @user = User.new(name: 'Dario', email: 'darioa@mail.com', password: '123456')
     @user.save
     @category = Category.create(user_id: @user.id, name: 'Travel', icon: 'https://cdn-icons-png.flaticon.com/512/3663/3663544.png')
-   
   end
 
   it 'Takes user to the splash page' do
@@ -27,5 +26,3 @@ RSpec.describe 'IndexCategories', type: :system do
     expect(page.body).to include('Dario')
   end
 end
-
-  

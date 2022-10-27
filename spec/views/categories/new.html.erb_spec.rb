@@ -18,8 +18,6 @@ RSpec.describe 'categories/new', type: :view do
       assert_select 'input[name=?]', 'category[name]'
 
       assert_select 'input[name=?]', 'category[icon]'
-
-    
     end
   end
 end

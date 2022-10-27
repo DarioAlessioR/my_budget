@@ -3,16 +3,16 @@ require 'rails_helper'
 RSpec.describe 'users/index', type: :view do
   before(:each) do
     assign(:users, [
-      @user = assign(:user, User.create!(
-        name: 'MyString',
-        email: 'dario1@mail.com',
-        password: '123456'
-      )),
-      @user = assign(:user, User.create!(
-        name: 'MyString',
-        email: 'dario2@mail.com',
-        password: '123456'
-      ))
+             @user = assign(:user, User.create!(
+                                     name: 'MyString',
+                                     email: 'dario1@mail.com',
+                                     password: '123456'
+                                   )),
+             @user = assign(:user, User.create!(
+                                     name: 'MyString',
+                                     email: 'dario2@mail.com',
+                                     password: '123456'
+                                   ))
            ])
   end
 

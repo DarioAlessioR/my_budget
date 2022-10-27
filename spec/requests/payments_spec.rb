@@ -42,7 +42,7 @@ RSpec.describe '/payments', type: :request do
 
   describe 'GET /new' do
     it 'renders a successful response' do
-      category = Category.create! valid_attributes
+      Category.create! valid_attributes
       get new_category_payment_path
       expect(response).to be_successful
     end
@@ -59,14 +59,14 @@ RSpec.describe '/payments', type: :request do
   describe 'POST /create' do
     context 'with valid parameters' do
       it 'creates a new Payment' do
-        category = Category.create! valid_attributes
+        Category.create! valid_attributes
         expect do
           post payments_url, params: { payment: valid_attributes }
         end.to change(Payment, :count).by(1)
       end
 
       it 'redirects to the created payment' do
-        category = Category.create! valid_attributes
+        Category.create! valid_attributes
         post payments_url, params: { payment: valid_attributes }
         expect(response).to redirect_to(payment_url(Payment.last))
       end
@@ -74,14 +74,14 @@ RSpec.describe '/payments', type: :request do
 
     context 'with invalid parameters' do
       it 'does not create a new Payment' do
-        category = Category.create! valid_attributes
+        Category.create! valid_attributes
         expect do
           post payments_url, params: { payment: invalid_attributes }
         end.to change(Payment, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        category = Category.create! valid_attributes
+        Category.create! valid_attributes
         post payments_url, params: { payment: invalid_attributes }
         expect(response).to be_successful
       end
