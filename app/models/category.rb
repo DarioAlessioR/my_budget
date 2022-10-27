@@ -12,5 +12,4 @@ class Category < ApplicationRecord
     end
     total.round(2)
   end
-
 end

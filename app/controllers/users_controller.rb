@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   # before_action :authenticate_user!
   before_action :set_user, only: %i[show edit update destroy]
- 
 
   def welcome
     redirect_to categories_path if user_signed_in?
