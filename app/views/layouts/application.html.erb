@@ -9,23 +9,19 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
-<%= button_to "Log out", destroy_user_session_path, method: :delete %>
-
-
-<p class="navbar-list-item">Current user: <%= current_user.name if user_signed_in? %></p>
  
+ <section class="border">
 
+ <%= render "layouts/navbar" %>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+ 
     <%= yield %>
   </body>
 
-<footer>
-      <h5>PayFocus &copy;</h5>
-      <p>Developed by Dario Alessio</p>
-    </footer>
+  <footer>
+      <h2>PayFocus &copy;</h2>
+      <h4>Developed by Dario Alessio</h4>
+  </footer>
 
-
+</section>
 </html>

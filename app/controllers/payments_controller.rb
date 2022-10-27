@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_payment, only: %i[show edit update destroy]
+ 
 
   # GET /payments or /payments.json
   def index
@@ -9,24 +10,28 @@ class PaymentsController < ApplicationController
   end
 
   # GET /payments/1 or /payments/1.json
-  def show; end
+  def show
+    @category = Category.find(params[:category_id])
+    @payment = Payment.find(params[:id])
+  end
 
   # GET /payments/new
   def new
     @category = Category.find(params[:category_id])
     @payment = Payment.new
-   
-
   end
 
   # GET /payments/1/edit
-  def edit; end
+  def edit
+    @category = Category.find(params[:category_id])
+    @payment = Payment.find(params[:id])
+  end
 
   # POST /payments or /payments.json
   def create
     @payment = Payment.new(payment_params)
     @payment.user = current_user
-    @category = Category.find(@payment.category_id)
+    @category = Category.last
     @payment.categories.push(@category)
 
     respond_to do |format|
@@ -76,6 +81,6 @@ class PaymentsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def payment_params
-    params.require(:payment).permit(:name, :amount, :user_id, :category_id)
-  end
+    params.require(:payment).permit(:name, :amount, :user_id)
+  end  
 end

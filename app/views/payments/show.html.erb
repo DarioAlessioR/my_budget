@@ -2,13 +2,13 @@
 
 <%= render @payment %>
 
-<div>
-  <%= link_to "Edit this payment", edit_category_payment_path([:category_id], @payment) %> |
-  <%= link_to "Back to payments", category_payments_path %>
-
+<div class="links-list">
+ 
+  <%= link_to "Back to payments", category_payments_path, class: "links-edit-back-see"  %>
+</div>
   
-  
-  <%= button_to "Destroy this Payment", @payment_path, method: :delete %>
+  <div class="destroy-button-div">
+  <%= button_to "Destroy this Payment", @payment_path, method: :delete, class: "destroy-button"  %>
 
 </div>
 

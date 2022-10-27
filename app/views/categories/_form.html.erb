@@ -94,19 +94,19 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="editing-category-name">
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
   
 
-<p>Select an icon from the list</p>
+<p>Please, select an icon from the list:</p>
     
-    <ul>
+    <ul class="newcategory">
     
     <% icon_list.each do |icon_option|%>
-      <li class="newcategory__option-list">
+      <li class="newcategory-option-list">
         <%= form.radio_button :icon, icon_option[:icon] %> 
         <img class="newcategory_img" src="<%=asset_path("#{icon_option[:icon]}.png") %>" alt=<%=icon_option[:title]%>>
       </li>

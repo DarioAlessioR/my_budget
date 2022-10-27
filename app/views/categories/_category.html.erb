@@ -1,18 +1,19 @@
 <div id="<%= dom_id category %>">
-  <p>
-    <strong>Name:</strong>
-    <%= category.name %>
-  </p>
+  
+  <%= link_to category do %>
+  <div class="render-category">  
+  
+    <img class="newcategory_img" src="<%=asset_path("#{category.icon}.png") %>">
+   <% end %>
+    
+    <p class="category-name-amount-link">
+      <strong><%= category.name %></strong>
+    </p>
 
-  <p>
-    <strong>Icon:</strong>
-    <%= category.icon %>
-  </p>
-
-<img class="newcategory_img" src="<%=asset_path("#{category.icon}.png") %>">
-
-<p>
+    <p class="category-name-amount-link">
       $ <%= category.total_amount_category %>
     </p>
 
+  </div>
+ 
 </div>

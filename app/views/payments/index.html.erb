@@ -1,14 +1,24 @@
+<div class="payments-view">
+
 <p style="color: green"><%= notice %></p>
 
 <h1>Payments</h1>
 
 <div id="payments">
+
+<div class="render-payments">
   <% @payments.each do |payment| %>
     <%= render payment %>
-    <p>
-      <%= link_to "Show this payment", category_payment_path(@category, payment) %>
-    </p>
+    
   <% end %>
 </div>
+</div>
 
-<%= link_to "New payment", new_category_payment_path %>
+<div class="links-list">
+
+<%= link_to "Back to category", category_path(@category), class: "links-edit-back-see" %> |
+
+<%= link_to "New payment", new_category_payment_path, class: "links-edit-back-see" %>
+
+</div>
+</div>
