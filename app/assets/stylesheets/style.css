@@ -50,6 +50,10 @@ body {
   padding: 10px;
 }
 
+.edit-user {
+  padding: 15px;
+}
+
 .logout-button {
   background-color: rgb(100, 189, 230);
   text-decoration: none;
