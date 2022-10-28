@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
   def welcome
     redirect_to categories_path if user_signed_in?
-    
   end
 
   # GET /users or /users.json
