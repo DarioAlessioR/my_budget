@@ -25,6 +25,10 @@ $ code .
 
 3. At the command line, run `rails s` to run the app.
 
+## Live demo
+Please visit the app page in Heroku: https://limitless-tor-75096.herokuapp.com/
+
+
 ## Author
 
 👤 **Dario Alessio**
