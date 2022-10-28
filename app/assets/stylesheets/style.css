@@ -2,61 +2,67 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html,
 body {
   max-width: 100%;
   overflow-x: hidden;
-  background-color: rgb(173, 233, 213);
+  background-color: rgb(239, 245, 245);
 }
 
 .nav-initial {
+  color: white;
   display: flex;
   flex-direction: column;
-  margin-top: 40%;
+  margin-top: 25%;
   justify-content: center;
 }
 
 .nav-initial div {
+  color: white;
   width: 70%;
   margin-left: 15%;
   margin-right: 15%;
   text-align: center;
-  border: 1px solid rgb(59, 57, 158, 0.3);
+  border: 1px solid rgba(7, 6, 56, 0.3);
   border-radius: 4px;
-  background-color: rgb(174, 196, 226);
+  background-color: #3778c2;
 }
 
 .navbar-list-item-initial {
   padding-left: 10px;
-  color: black;
+  color: white;
   text-decoration: none;
-  font-size: 2.1rem;
+  font-size: 1.8rem;
 }
 
 .navlogo {
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(100, 189, 230);
+  background-color: #3778c2;
   padding: 10px;
 }
 
 .navlogo nav {
+  color: white;
   display: flex;
   flex-direction: row;
 }
 
 .logo {
+  color: white;
   width: 60px;
   height: auto;
 }
 
 .navbar-list-item {
   padding-left: 10px;
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 1rem;
 }
@@ -66,11 +72,12 @@ body {
 }
 
 .navbar-items {
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(100, 189, 230);
+  background-color:#3778c2;
   padding: 10px;
 }
 
@@ -79,11 +86,12 @@ body {
 }
 
 .logout-button {
-  background-color: rgb(100, 189, 230);
+  color: white;
+  background-color: #3778c2;
   text-decoration: none;
   border: none;
   list-style: none;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
 }
 
@@ -95,9 +103,11 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: rgb(100, 189, 230);
+  color: white;
+  background-color: #5fb523;
   padding-left: 10px;
   padding-right: 15px;
+  height: 70px;
 }
 
 .footer p {
@@ -135,7 +145,7 @@ footer {
 
 .field-signin-signup {
   width: 100%;
-  background-color: rgb(173, 233, 213);
+  background-color: rgb(239, 245, 245);
   border: none;
   height: 50px;
 }
