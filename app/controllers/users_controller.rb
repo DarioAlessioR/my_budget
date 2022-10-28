@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def welcome
     redirect_to categories_path if user_signed_in?
+    
   end
 
   # GET /users or /users.json
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
-    before_action :authenticate_user!
+    redirect_to categories_path if user_signed_in?
   end
 
   # GET /users/new

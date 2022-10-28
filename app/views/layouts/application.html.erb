@@ -12,11 +12,35 @@
  
  <section class="border">
 
- <%= render "layouts/navbar" %>
-  <body>
- 
+
+<% if user_signed_in? %>
+
+  <%= render "layouts/navbar" %>
+
+<% else %>
+
+  <div class="navlogo">
+    <%= image_tag ("cash-payment.png"), class: 'logo' %>
+  </div>
+
+<% end %>
+
+
+ <body>
     <%= yield %>
   </body>
+
+<% if user_signed_in? %>
+ 
+
+<% else %>
+
+<nav class="nav-initial">
+  <div><%= link_to "Log-in", new_user_session_path, class: "navbar-list-item-initial" %></div><br />
+  <div><%= link_to "Sign-up", new_user_registration_path, class: "navbar-list-item-initial" %></div><br />
+</nav>
+
+<% end %>
 
   <footer>
       <h2>PayFocus &copy;</h2>
