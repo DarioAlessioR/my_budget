@@ -237,6 +237,38 @@ footer {
   height: auto;
 }
 
+.new-category-button-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  margin-left: -20px;
+  font-weight: 500;
+  font-size: 1.9rem;
+  width: 100%;
+  background-color: #5fb523;
+  height: 80px;
+  text-decoration: none;
+}
+
+.new-category-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 15px;
+  font-weight: 500;
+  font-size: 1.9rem;
+  width: 90%;
+  color: white;
+  border: 1px solid white;
+  height: 50px;
+  text-decoration: none;
+}
+
 .arrow-back {
   padding-right: 20px;
 }
