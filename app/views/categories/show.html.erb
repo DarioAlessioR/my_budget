@@ -1,0 +1,19 @@
+<div class="show-category">
+
+<p style="color: green"><%= notice %></p>
+
+<%= render @category %>
+
+<div class="links-list">
+
+  <%= link_to "Edit this category", edit_category_path(@category), class: "links-edit-back-see" %> |
+  <%= link_to category_payments_path(@category), class: "links-edit-back-see" do %>See Payments<% end %> |
+  <%= link_to "Back to categories", categories_path, class: "links-edit-back-see" %> 
+ </div>
+  
+  <div class="destroy-button-div">
+  <%= button_to "Destroy this category", @category, method: :delete, class: "destroy-button" %>
+ </div>
+
+
+</div>

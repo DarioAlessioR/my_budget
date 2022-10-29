@@ -1,24 +1,59 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
+# My Budget App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby
+- Ruby on Rails
+- HTML
+- CSS
+- Bootstrap
+- PostgreSQL
+- Git & Github
 
-* System dependencies
+## Setup
 
-* Configuration
+1. You would need to have a computer with ruby and ruby on rails installed to run it.
+2. Follow these steps on your console to properly clone this repository on your desktop:
 
-* Database creation
+```
+$ git clone https://github.com/DarioAlessioR/my_budget
+$ code .
+```
 
-* Database initialization
+3. At the command line, run `rails s` to run the app.
 
-* How to run the test suite
+## Live demo
+Please visit the app page in Heroku: https://limitless-tor-75096.herokuapp.com/
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Author
 
-* ...
+👤 **Dario Alessio**
+
+- GitHub: https://github.com/DarioAlessioR
+- Slack: https://microverse-students.slack.com/team/U039GCFRK9B
+- LinkedIn: https://www.linkedin.com/in/dario-alessio-3a3b7911b
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Based on the [design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=&&&) by [Gregoire Vella](http://linkedin.com/company/minimalapps)
+- Hat tip to anyone whose code was used
+- Microverse
+- My supportive family 😊
+
+## 📝 License
+
+This project is [MIT](./LICENSE.md) licensed.

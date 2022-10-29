@@ -1,0 +1,35 @@
+<div class="signup-login">
+
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="div-field-signin-signup">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Full name", class: "field-signin-signup" %>
+  </div>
+  
+  
+  <div class="div-field-signin-signup">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "your_email@mail.com", class: "field-signin-signup"  %>
+  </div>
+
+  <div class="div-field-signin-signup">
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: "field-signin-signup"  %>
+  </div>
+
+  <div class="div-field-signin-signup">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation", class: "field-signin-signup"  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+</div>

@@ -1,0 +1,23 @@
+<div class="navlogo">
+  <%= image_tag ("cash-payment.png"), class: 'logo' %>
+
+  <nav>
+
+
+
+
+
+    <div class="navbar-items">
+
+<div class="arrow-back">
+<%= link_to :back do %>
+    <img class="newcategory_img" src="<%=asset_path("arrow-121-16.png") %>">
+   <% end %>
+</div>
+      <%= button_to "Log-out", destroy_user_session_path, method: :delete, class: "logout-button" %>
+      <p><%= link_to "Account", edit_user_registration_path, class: "navbar-list-item" %></p>
+      <p class="navbar-list-item">User: <%= current_user.name %></p>
+    </div>
+  </nav>
+
+</div>

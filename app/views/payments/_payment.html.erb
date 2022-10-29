@@ -1,0 +1,21 @@
+<div id="<%= dom_id payment %>">
+  
+  <div class="payment-view">
+<div class="payment-line">
+ <%= link_to category_payment_path(@category, payment) do %>
+    
+  <p>
+    <strong><%= payment.name %></strong>
+  </p>
+
+<% end %>
+
+
+  <p>$ <%= payment.amount %></p>
+  
+  
+  </div>
+<p>Date & time: <%= payment.created_at %></p>
+
+</div>
+</div>

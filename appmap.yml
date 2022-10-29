@@ -1,0 +1,8 @@
+---
+name: my_budget
+language: ruby
+appmap_dir: tmp/appmap
+packages:
+- path: app
+- path: lib
+exclude: []

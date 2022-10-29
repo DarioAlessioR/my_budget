@@ -1,0 +1,13 @@
+<div class="edit-category">
+
+<h1>Editing category</h1>
+
+<%= render "form", category: @category %>
+
+<br>
+
+<div class="links-list">
+  <%= link_to "Show this category", @category, class: "links-edit-back-see" %> |
+  <%= link_to "Back to categories", categories_path, class: "links-edit-back-see" %>
+</div>
+</div>
